@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".SecondActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,41 +18,29 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="第一页"
+            android:text="第二页"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/tv_send"
+            android:id="@+id/tv_send2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="发送"
-            android:onClick="sendToNullPage"
+            android:text="发回去"
+            android:onClick="sendToPage1"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/tv_go2second"
+            android:id="@+id/tv_back"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="跳转"
-            android:onClick="openPage2"
-            android:textColor="@android:color/black"
-            android:textSize="18sp" />
-
-
-        <Button
-            android:id="@+id/tv_samepage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="20dp"
-            android:text="同一页订阅"
-            android:onClick="send2ThisPage"
+            android:text="返回"
+            android:onClick="finishSelf"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
