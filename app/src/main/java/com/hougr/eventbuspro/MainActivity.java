@@ -7,9 +7,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 
 import com.hougr.eventbus.EventBusPro;
+import com.hougr.eventbus.ObserverWrapper;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -23,11 +23,17 @@ public class MainActivity extends AppCompatActivity {
         EventBusPro.get()
                 .with("sendToPage1", String.class)
 //                .observeForever(new Observer<String>() {
-                .observe(this, new Observer<String>() {
+                .observe(this, new ObserverWrapper<String>() {
+//                    @Override
+//                    public void onChanged(@Nullable String s) {
+//                        Toast.makeText(getApplication(), "收到："+s, Toast.LENGTH_SHORT).show();
+//                    }
+
                     @Override
-                    public void onChanged(@Nullable String s) {
+                    public void onValueChanged(String s) {
                         Toast.makeText(getApplication(), "收到："+s, Toast.LENGTH_SHORT).show();
                     }
+
                 });
 
 
@@ -35,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
                 .with("send2ThisPage", String.class)
 //                .observeForever(new Observer<String>() {
                 .observe(  this,
-                        new Observer<String>() {
-                    @Override
-                    public void onChanged(@Nullable String s) {
-                        Toast.makeText(getApplication(), "收到："+s, Toast.LENGTH_SHORT).show();
-                    }
-                });
+                        new ObserverWrapper<String>() {
+                            @Override
+                            public void onValueChanged(String s) {
+                                Toast.makeText(getApplication(), "收到："+s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
     }
 
     public void sendToNullPage (View view) {

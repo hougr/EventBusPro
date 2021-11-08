@@ -7,9 +7,10 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 
 import com.hougr.eventbus.EventBusPro;
+import com.hougr.eventbus.ObserverWrapper;
+
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -21,13 +22,31 @@ public class SecondActivity extends AppCompatActivity {
 
         EventBusPro.get()
                 .with("sendToNullPage", String.class)
-//                .observeForever(new Observer<String>() {
-                .observe(this, new Observer<String>() {
+//                .observeForever(new ObserverWrapper<String>() {
+                .observe(this, new ObserverWrapper<String>() {
                     @Override
-                    public void onChanged(@Nullable String s) {
+                    public void onValueChanged(String s) {
                         Toast.makeText(getApplication(), "收到："+s, Toast.LENGTH_SHORT).show();
                     }
+
+
+//                    @Override
+//                    public void onChanged(@NonNull String s) {
+//                        super.onChanged(s);
+//                    }
                 });
+
+
+        EventBusPro.get()
+                .with("send2ThisPage", String.class)
+//                .observeForever(new Observer<String>() {
+                .observe(  this,
+                        new ObserverWrapper<String>() {
+                            @Override
+                            public void onValueChanged(String s) {
+                                Toast.makeText(getApplication(), "收到："+s, Toast.LENGTH_SHORT).show();
+                            }
+                        });
     }
 
     public void sendToPage1(View v) {
