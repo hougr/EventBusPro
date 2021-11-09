@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Chap02ConcurrentActivity2">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,28 +12,35 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/chap01_btn"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="(1)支持三种订阅方式"
-            android:onClick="go2Chap01ObserveMode"
+            android:text="支持多线程并发安全-第2页"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/chap02_btn"
+            android:id="@+id/tv_send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="(2)支持多线程并发安全"
-            android:onClick="go2Chap02Concurrent"
+            android:text="开始计时"
+            android:onClick="startTiming"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
+        <TextView
+            android:id="@+id/show_timer_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="这里展示时间变化"
+            android:textColor="@android:color/black"
+            android:textSize="20sp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

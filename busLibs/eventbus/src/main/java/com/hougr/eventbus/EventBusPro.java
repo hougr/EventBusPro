@@ -31,7 +31,7 @@ public class EventBusPro {
         return SingletonHolder.singleton;
     }
 
-    public <T extends Object> LiveDataWrapper<T> with(String channelName, Class<T> classObject) {
+    public synchronized <T extends Object> LiveDataWrapper<T> with(String channelName, Class<T> classObject) {
 //        public <T> LiveDataWrapper<T> with(String channelName, T classObject) {
         if (!mEventBusMap.containsKey(channelName)) {
             mEventBusMap.put(channelName, new LiveDataWrapper<>());
@@ -39,6 +39,10 @@ public class EventBusPro {
         }
         return (LiveDataWrapper<T>) mEventBusMap.get(channelName);
 //        return mEventBusMap.get(channelName);
+    }
+
+    public synchronized LiveDataWrapper<Object> with(String channelName) {
+        return with(channelName, Object.class);
     }
 
 }

@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_01_observe_mode.xml" value="0.1546875" />
+        <entry key="app/src/main/res/layout/activity_01_observe_mode2.xml" value="0.1546875" />
+        <entry key="app/src/main/res/layout/activity_02_concurrent.xml" value="0.1546875" />
+        <entry key="app/src/main/res/layout/activity_02_concurrent2.xml" value="0.1453125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16770833333333332" />
         <entry key="app/src/main/res/layout/activity_second.xml" value="0.16770833333333332" />
       </map>

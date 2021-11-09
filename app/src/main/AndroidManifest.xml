@@ -18,7 +18,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".Chap01ObserveModeActivity"></activity>
+        <activity android:name=".Chap01ObserveModeActivity2"></activity>
+        <activity android:name=".Chap02ConcurrentActivity"></activity>
+        <activity android:name=".Chap02ConcurrentActivity2"></activity>
     </application>
 
 </manifest>

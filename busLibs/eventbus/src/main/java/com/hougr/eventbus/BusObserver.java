@@ -3,7 +3,7 @@ package com.hougr.eventbus;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
 
-public abstract class ObserverWrapper<T> implements Observer<T> {
+public abstract class BusObserver<T> implements Observer<T> {
 //public abstract class ObserverWrapper<T>{
 //    Observer<T> mObserver;//接口方法重写后必须是public，故改继承为组合。不对，必须用继承。
     int mVersion = -1;

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".Chap01ObserveModeActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,25 +12,46 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/chap01_btn"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="(1)支持三种订阅方式"
-            android:onClick="go2Chap01ObserveMode"
+            android:text="第一页"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/chap02_btn"
+            android:id="@+id/tv_send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:padding="20dp"
-            android:text="(2)支持多线程并发安全"
-            android:onClick="go2Chap02Concurrent"
+            android:text="发送"
+            android:onClick="sendToNullPage"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/tv_go2second"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="跳转"
+            android:onClick="openPage2"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/tv_samepage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="同一页订阅"
+            android:onClick="send2ThisPage"
             android:textColor="@android:color/black"
             android:textSize="18sp" />
 
