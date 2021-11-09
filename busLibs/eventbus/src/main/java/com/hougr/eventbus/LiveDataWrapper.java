@@ -24,7 +24,7 @@ public class LiveDataWrapper<T>
 
     @Override
     public void observeSticky(LifecycleOwner owner, ObserverWrapper observerWrapper) {
-        isWrapperExisted(observerWrapper, mVersion, ObserverWrapper.ObserveMode.MODE_OBSERVE_STICKY);
+        isWrapperExisted(observerWrapper, -1, ObserverWrapper.ObserveMode.MODE_OBSERVE_STICKY);
 //        super.observe(owner,observerWrapper);
         mLiveData.observe(owner,observerWrapper);
     }
@@ -32,6 +32,13 @@ public class LiveDataWrapper<T>
     @Override
     public void observeForever(ObserverWrapper observerWrapper) {
         isWrapperExisted(observerWrapper, mVersion, ObserverWrapper.ObserveMode.MODE_OBSERVE_FOREVER);
+//        super.observeForever(observerWrapper);
+        mLiveData.observeForever(observerWrapper);
+    }
+
+    @Override
+    public void observeStickyForever(ObserverWrapper observerWrapper) {
+        isWrapperExisted(observerWrapper, -1, ObserverWrapper.ObserveMode.MODE_OBSERVE_STICKY_FOREVER);
 //        super.observeForever(observerWrapper);
         mLiveData.observeForever(observerWrapper);
     }
@@ -46,6 +53,11 @@ public class LiveDataWrapper<T>
         mObserverWrapperSet.add(wrapper);
         return false;
     }
+
+//    @Override
+//    public void removeForeverObserver(ObserverWrapper<T> observerWrapper) {
+//
+//    }
 
     @Override
     public void setValue(T value) {

@@ -35,9 +35,13 @@ public abstract class ObserverWrapper<T> implements Observer<T> {
 
 //    public abstract void onChanged(T value);
 
+    /**
+     * 这个Mode目前没有实际用处，只用mVersion就能实现区分Sticky的功能。
+     */
     public static interface ObserveMode {
         public static final int MODE_OBSERVE_STICKY = 0;
         public static final int MODE_OBSERVE = 1;
-        public static final int MODE_OBSERVE_FOREVER = 2;
+        public static final int MODE_OBSERVE_STICKY_FOREVER = 2;
+        public static final int MODE_OBSERVE_FOREVER = 3;
     }
 }
